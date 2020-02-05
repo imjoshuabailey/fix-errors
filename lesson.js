@@ -1,8 +1,7 @@
-var name;
+var name = "josh";
 
-function printName (input){
-  name = input
+function printName (){
   console.log(name)
 }
 
-printName("josh");
+printName();

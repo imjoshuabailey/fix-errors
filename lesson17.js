@@ -14,11 +14,12 @@ var people = [
     ]
 
 
-var nameFilter = function(filteredName, anonymousFunction) {
+var nameFilter = function(filteredName) {
     var results = []
     for (var i = 0; i < people.length; i++) {
         let currentName = people[i].name
         if (currentName != filteredName) {
+            runCountFunction(i)
             results.push(currentName)
 
         }
@@ -27,7 +28,9 @@ var nameFilter = function(filteredName, anonymousFunction) {
     return results
 }
 
-var filteredNames = nameFilter("Betty", function(name) {
-    console.log("This Ran")
-})
+runCountFunction = (name) => {
+    console.log("This Ran", name)
+}
+
+var filteredNames = nameFilter("Betty")
 console.log(filteredNames)
